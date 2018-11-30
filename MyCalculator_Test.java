@@ -6,6 +6,7 @@ public class MyCalculator_Test {
   public static final String ANSI_RESET  = "\u001B[0m";
 
   private static boolean test_StartValueOfFirstNumber(){
+    calc.reset();
     double temp = calc.getFirstNumber();
     if(0 == temp){
       return true;
@@ -13,6 +14,7 @@ public class MyCalculator_Test {
     return false;
   }
   private static boolean test_StartValueOfSecondNumber(){
+    calc.reset();
     double temp = calc.getSecondNumber();
     if(0 == temp){
       return true;
@@ -20,6 +22,7 @@ public class MyCalculator_Test {
     return false;
   }
   private static boolean test_StartValueOfAnswer(){
+    calc.reset();
     double temp = calc.getAnswer();
     if(0 == temp){
       return true;
@@ -27,6 +30,7 @@ public class MyCalculator_Test {
     return false;
   }
   private static boolean test_StartValueOfOperator(){
+    calc.reset();
     String temp = calc.getOperator();
     if(temp == "-1"){
       return true;
@@ -80,12 +84,7 @@ public class MyCalculator_Test {
       System.out.println("SV SecondNumber: " + ANSI_RED + "FAILED"+ ANSI_RESET);
       totalAmountOfErros++;
     }
-    if(test_StartValueOfAnswer()){
-      System.out.println("SV Answer: " + ANSI_GREEN + "PASSED"+ ANSI_RESET);
-    } else {
-      System.out.println("SV Answer: " + ANSI_RED + "FAILED"+ ANSI_RESET);
-      totalAmountOfErros++;
-    }
+
     if(test_StartValueOfOperator()){
       System.out.println("SV Operaotr: " + ANSI_GREEN + "PASSED"+ ANSI_RESET);
     } else {
@@ -96,6 +95,12 @@ public class MyCalculator_Test {
       System.out.println("Add method: " + ANSI_GREEN + "PASSED"+ ANSI_RESET);
     } else {
       System.out.println("Add method: " + ANSI_RED + "FAILED"+ ANSI_RESET);
+      totalAmountOfErros++;
+    }
+    if(test_StartValueOfAnswer()){
+      System.out.println("SV Answer: " + ANSI_GREEN + "PASSED"+ ANSI_RESET);
+    } else {
+      System.out.println("SV Answer: " + ANSI_RED + "FAILED"+ ANSI_RESET);
       totalAmountOfErros++;
     }
     if(test_SubMethod()){
