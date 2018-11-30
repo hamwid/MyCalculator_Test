@@ -41,6 +41,30 @@ public class MyCalculator_Test {
     }
     return false;
   }
+  private static boolean test_SubMethod(){
+    double temp1 = 1.3, temp2 = 3.2, correctAnswer = temp1-temp2;
+    double calculatedAnswer = calc.callSub(temp1, temp2);
+    if(correctAnswer == calculatedAnswer){
+      return true;
+    }
+    return false;
+  }
+  private static boolean test_MultMethod(){
+    double temp1 = 1.3, temp2 = 3.2, correctAnswer = temp1*temp2;
+    double calculatedAnswer = calc.callMult(temp1, temp2);
+    if(correctAnswer == calculatedAnswer){
+      return true;
+    }
+    return false;
+  }
+  private static boolean test_DivMethod(){
+    double temp1 = 1.3, temp2 = 3.2, correctAnswer = temp1/temp2;
+    double calculatedAnswer = calc.callDiv(temp1, temp2);
+    if(correctAnswer == calculatedAnswer){
+      return true;
+    }
+    return false;
+  }
 
   public static void main(String[] args){
     int totalAmountOfErros = 0;
@@ -72,6 +96,24 @@ public class MyCalculator_Test {
       System.out.println("Add method: " + ANSI_GREEN + "PASSED"+ ANSI_RESET);
     } else {
       System.out.println("Add method: " + ANSI_RED + "FAILED"+ ANSI_RESET);
+      totalAmountOfErros++;
+    }
+    if(test_SubMethod()){
+      System.out.println("Sub method: " + ANSI_GREEN + "PASSED"+ ANSI_RESET);
+    } else {
+      System.out.println("Sub method: " + ANSI_RED + "FAILED"+ ANSI_RESET);
+      totalAmountOfErros++;
+    }
+    if(test_MultMethod()){
+      System.out.println("Mult method: " + ANSI_GREEN + "PASSED"+ ANSI_RESET);
+    } else {
+      System.out.println("Mult method: " + ANSI_RED + "FAILED"+ ANSI_RESET);
+      totalAmountOfErros++;
+    }
+    if(test_DivMethod()){
+      System.out.println("Div method: " + ANSI_GREEN + "PASSED"+ ANSI_RESET);
+    } else {
+      System.out.println("Div method: " + ANSI_RED + "FAILED"+ ANSI_RESET);
       totalAmountOfErros++;
     }
   }
