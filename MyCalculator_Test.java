@@ -7,67 +7,35 @@ public class MyCalculator_Test {
 
   private static boolean test_StartValueOfFirstNumber(){
     calc.reset();
-    double temp = calc.getFirstNumber();
-    if(0 == temp){
-      return true;
-    }
-    return false;
+    return 0 == calc.getFirstNumber();
   }
   private static boolean test_StartValueOfSecondNumber(){
     calc.reset();
-    double temp = calc.getSecondNumber();
-    if(0 == temp){
-      return true;
-    }
-    return false;
+    return 0 == calc.getSecondNumber();
   }
   private static boolean test_StartValueOfAnswer(){
     calc.reset();
-    double temp = calc.getAnswer();
-    if(10 == temp){
-      return true;
-    }
-    return false;
+    return 0 == calc.getAnswer();
   }
   private static boolean test_StartValueOfOperator(){
     calc.reset();
-    String temp = calc.getOperator();
-    if(temp == "-1"){
-      return true;
-    }
-    return false;
+    return "-1" == calc.getOperator();
   }
   private static boolean test_AddMethod(){
-    double temp1 = 1.3, temp2 = 3.2, correctAnswer = temp1+temp2;
-    double calculatedAnswer = calc.callAdd(temp1, temp2);
-    if(correctAnswer == calculatedAnswer){
-      return true;
-    }
-    return false;
+    double temp1 = 1.3, temp2 = 3.2;
+    return (temp1+temp2) == calc.callAdd(temp1, temp2);
   }
   private static boolean test_SubMethod(){
-    double temp1 = 1.3, temp2 = 3.2, correctAnswer = temp1-temp2;
-    double calculatedAnswer = calc.callSub(temp1, temp2);
-    if(correctAnswer == calculatedAnswer){
-      return true;
-    }
-    return false;
+    double temp1 = 1.3, temp2 = 3.2;
+    return (temp1-temp2) == calc.callSub(temp1, temp2);
   }
   private static boolean test_MultMethod(){
-    double temp1 = 1.3, temp2 = 3.2, correctAnswer = temp1*temp2;
-    double calculatedAnswer = calc.callMult(temp1, temp2);
-    if(correctAnswer == calculatedAnswer){
-      return true;
-    }
-    return false;
+    double temp1 = 1.3, temp2 = 3.2;
+    return (temp1*temp2) == calc.callMult(temp1, temp2);
   }
   private static boolean test_DivMethod(){
-    double temp1 = 1.3, temp2 = 3.2, correctAnswer = temp1*temp2;
-    double calculatedAnswer = calc.callDiv(temp1, temp2);
-    if(correctAnswer == calculatedAnswer){
-      return true;
-    }
-    return false;
+    double temp1 = 1.3, temp2 = 3.2;
+    return (temp1/temp2) == calc.callDiv(temp1, temp2);
   }
 
   public static void main(String[] args){
