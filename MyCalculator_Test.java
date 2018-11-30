@@ -33,6 +33,14 @@ public class MyCalculator_Test {
     }
     return false;
   }
+  private static boolean test_AddMethod(){
+    double temp1 = 1.3, temp2 = 3.2, correctAnswer = temp1+temp2;
+    double calculatedAnswer = calc.callAdd(temp1, temp2);
+    if(correctAnswer == calculatedAnswer){
+      return true;
+    }
+    return false;
+  }
 
   public static void main(String[] args){
     int totalAmountOfErros = 0;
@@ -58,6 +66,12 @@ public class MyCalculator_Test {
       System.out.println("SV Operaotr: " + ANSI_GREEN + "PASSED"+ ANSI_RESET);
     } else {
       System.out.println("SV Operator: " + ANSI_RED + "FAILED"+ ANSI_RESET);
+      totalAmountOfErros++;
+    }
+    if(test_AddMethod()){
+      System.out.println("Add method: " + ANSI_GREEN + "PASSED"+ ANSI_RESET);
+    } else {
+      System.out.println("Add method: " + ANSI_RED + "FAILED"+ ANSI_RESET);
       totalAmountOfErros++;
     }
   }
