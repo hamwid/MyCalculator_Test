@@ -24,7 +24,7 @@ public class MyCalculator_Test {
   private static boolean test_StartValueOfAnswer(){
     calc.reset();
     double temp = calc.getAnswer();
-    if(0 == temp){
+    if(10 == temp){
       return true;
     }
     return false;
@@ -62,7 +62,7 @@ public class MyCalculator_Test {
     return false;
   }
   private static boolean test_DivMethod(){
-    double temp1 = 1.3, temp2 = 3.2, correctAnswer = temp1/temp2;
+    double temp1 = 1.3, temp2 = 3.2, correctAnswer = temp1*temp2;
     double calculatedAnswer = calc.callDiv(temp1, temp2);
     if(correctAnswer == calculatedAnswer){
       return true;
@@ -73,53 +73,55 @@ public class MyCalculator_Test {
   public static void main(String[] args){
     int totalAmountOfErros = 0;
     if(test_StartValueOfFirstNumber()){
-      System.out.println("SV FirstNumber: " + ANSI_GREEN + "PASSED"+ ANSI_RESET);
+      System.out.printf("%-20s"+ANSI_GREEN+"%s%n"+ANSI_RESET,"SV FirstNumber", "PASSED");
     } else {
-      System.out.println("SV FirstNumber: " + ANSI_RED + "FAILED"+ ANSI_RESET);
+      System.out.printf("%-40s"+ANSI_RED+"%s%n"+ANSI_RESET,"SV FirstNumber", "FAILED");
       totalAmountOfErros++;
     }
     if(test_StartValueOfSecondNumber()){
-      System.out.println("SV SecondNumber: " + ANSI_GREEN + "PASSED"+ ANSI_RESET);
+      System.out.printf("%-20s"+ANSI_GREEN+"%s%n"+ANSI_RESET,"SV SecondNumber", "PASSED");
     } else {
-      System.out.println("SV SecondNumber: " + ANSI_RED + "FAILED"+ ANSI_RESET);
+      System.out.printf("%-40s"+ANSI_RED+"%s%n"+ANSI_RESET,"SV SecondNumber", "FAILED");
       totalAmountOfErros++;
     }
 
     if(test_StartValueOfOperator()){
-      System.out.println("SV Operaotr: " + ANSI_GREEN + "PASSED"+ ANSI_RESET);
+      System.out.printf("%-20s"+ANSI_GREEN+"%s%n"+ANSI_RESET,"SV Operator", "PASSED");
     } else {
-      System.out.println("SV Operator: " + ANSI_RED + "FAILED"+ ANSI_RESET);
-      totalAmountOfErros++;
-    }
-    if(test_AddMethod()){
-      System.out.println("Add method: " + ANSI_GREEN + "PASSED"+ ANSI_RESET);
-    } else {
-      System.out.println("Add method: " + ANSI_RED + "FAILED"+ ANSI_RESET);
+      System.out.printf("%-40s"+ANSI_RED+"%s%n"+ANSI_RESET,"SV Operator", "FAILED");
       totalAmountOfErros++;
     }
     if(test_StartValueOfAnswer()){
-      System.out.println("SV Answer: " + ANSI_GREEN + "PASSED"+ ANSI_RESET);
+      System.out.printf("%-20s"+ANSI_GREEN+"%s%n"+ANSI_RESET,"SV Answer", "PASSED");
     } else {
-      System.out.println("SV Answer: " + ANSI_RED + "FAILED"+ ANSI_RESET);
+      System.out.printf("%-40s"+ANSI_RED+"%s%n"+ANSI_RESET,"SV Answer", "FAILED");
       totalAmountOfErros++;
     }
-    if(test_SubMethod()){
-      System.out.println("Sub method: " + ANSI_GREEN + "PASSED"+ ANSI_RESET);
+    if(test_AddMethod()){
+      System.out.printf("%-20s"+ANSI_GREEN+"%s%n"+ANSI_RESET,"Add Method", "PASSED");
     } else {
-      System.out.println("Sub method: " + ANSI_RED + "FAILED"+ ANSI_RESET);
+      System.out.printf("%-40s"+ANSI_RED+"%s%n"+ANSI_RESET,"Add Method", "FAILED");
+      totalAmountOfErros++;
+    }
+
+    if(test_SubMethod()){
+      System.out.printf("%-20s"+ANSI_GREEN+"%s%n"+ANSI_RESET,"Sub Method", "PASSED");
+    } else {
+      System.out.printf("%-40s"+ANSI_RED+"%s%n"+ANSI_RESET,"Sub Method", "FAILED");
       totalAmountOfErros++;
     }
     if(test_MultMethod()){
-      System.out.println("Mult method: " + ANSI_GREEN + "PASSED"+ ANSI_RESET);
+      System.out.printf("%-20s"+ANSI_GREEN+"%s%n"+ANSI_RESET,"Mult Method", "PASSED");
     } else {
-      System.out.println("Mult method: " + ANSI_RED + "FAILED"+ ANSI_RESET);
+      System.out.printf("%-40s"+ANSI_RED+"%s%n"+ANSI_RESET,"Mult Method", "FAILED");
       totalAmountOfErros++;
     }
     if(test_DivMethod()){
-      System.out.println("Div method: " + ANSI_GREEN + "PASSED"+ ANSI_RESET);
+      System.out.printf("%-20s"+ANSI_GREEN+"%s%n"+ANSI_RESET,"Div Method", "PASSED");
     } else {
-      System.out.println("Div method: " + ANSI_RED + "FAILED"+ ANSI_RESET);
+      System.out.printf("%-40s"+ANSI_RED+"%s%n"+ANSI_RESET,"Div Method", "FAILED");
       totalAmountOfErros++;
     }
+    System.out.println("Total amount of errors: "+totalAmountOfErros);
   }
 }
